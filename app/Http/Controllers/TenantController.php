@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 class TenantController extends Controller
 {
     /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+
       $tenants = Tenant::orderBy('name', 'asc')->get();
 
       return view('tenants.index', [
