@@ -12,26 +12,12 @@ class DirectoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-
-        $tenants = Tenant::with('zone:id,code')
-        ->when($request->query('zone_id'), function($query) use ($request) {
-              return $query->where('zone_id', $request->query('zone_id'));
-          })
-        ->when($request->query('floor_id'), function($query) use ($request) {
-              return $query->where('floor_id', $request->query('floor_id'));
-          })
-        ->when($request->query('category_id'), function($query) use ($request) {
-              return $query->where('category_id', $request->query('category_id'));
-          })
-        ->paginate(20);
+        $tenants = Tenant::orderBy('name', 'asc')->get();
 
         return view('directory.index', [
-            'tenants' => $tenants,
-            'request' => $request,
+            'tenants' => $tenants
         ]);
-
     }
-
 }

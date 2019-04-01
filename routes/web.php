@@ -89,9 +89,3 @@ Route::get('/home', 'HomeController@index')
 
 Route::get('/directory', 'DirectoryController@index')
         -> name('directory.index');
-Route::post('/directory/group', 'DirectoryController@group')
-        -> name('directory.group');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
