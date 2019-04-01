@@ -12,71 +12,38 @@ use App\Category;
        ]) !!}
        <table class="table table-borderless">
            <thead>
-               <th scope="col"><strong>NAME<strong></th>
-               <th scope="col"><strong>LOT NUMBER<strong></th>
-               <th scope="col"><strong>ZONE<strong></th>
-               <th scope="col"><strong>FLOOR<strong></th>
-               <th scope="col"><strong>CATEGORY<strong></th>
+               <th class= "text-center" scope="col"><strong>ZONE<strong></th>
+               <th class= "text-center" scope="col"><strong>FLOOR<strong></th>
+               <th class= "text-center" scope="col"><strong>CATEGORY<strong></th>
            </thead>
            <tbody>
               <tr>
-                  <td>
-                      {!! Form::text('name', null, [
-                          'id'        => 'tenant-name',
-                          'class'     => 'form-control',
-                          'maxlength' => 100,
-                      ]) !!}
-                  </td>
-                  <td>
-                      {!! Form::text('lot_number', null, [
-                          'id'        => 'tenant-lot_number',
-                          'class'     => 'form-control',
-                          'maxlength' => 10,
-                      ]) !!}
-                  </td>
-                  <td>
+                  <td class= "text-center">
                       {!! Form::select('zone_id',
                           Zone::pluck('code', 'id'), null, [
                               'class' => 'form-control',
                               'placeholder' => '- All -',
+                              'onchange' => 'this.form.submit()'
                       ]) !!}
                   </td>
-                  <td>
+                  <td class= "text-center">
                       {!! Form::select('floor_id',
                           Floor::pluck('code', 'id'), null, [
                               'class' => 'form-control',
                               'placeholder' => '- All -',
+                              'onchange' => 'this.form.submit()'
                       ]) !!}
                   </td>
-                  <td>
+                  <td class= "text-center">
                       {!! Form::select('category_id',
                           Category::pluck('name', 'id'), null, [
                               'class' => 'form-control',
                               'placeholder' => '- All -',
+                              'onchange' => 'this.form.submit()'
                       ]) !!}
                   </td>
               </tr>
-              <tr>
-                  <td colspan="5">
-                    {!! Form::button('Filter', [
-                        'type' => 'submit',
-                        'class' => 'btn btn-primary',
-                    ]) !!}
-                  </td>
-              </tr>
            </tbody>
-
-
-
-
-
-
-
-
-
-
-
-
        {!! Form::close() !!}
     </div>
 </section>

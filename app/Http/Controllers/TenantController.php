@@ -29,7 +29,8 @@ class TenantController extends Controller
        })
        ->when($request->query('category_id'), function($query) use ($request) {
        return $query->where('category_id', $request->query('category_id'));
-       })
+        })
+        ->paginate(20);
 
 
       return view('tenants.index', [
