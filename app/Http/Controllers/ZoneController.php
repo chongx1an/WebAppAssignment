@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 class ZoneController extends Controller
 {
     /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+
       $zones = Zone::orderBy('code', 'asc')->get();
 
       return view('zones.index', [

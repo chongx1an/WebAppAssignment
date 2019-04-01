@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 class TenantController extends Controller
 {
     /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
+
         $tenants = Tenant::with('zone:id,code')
        ->when($request->query('name'), function($query) use ($request) {
        return $query->where('name', 'like', '%'.$request->query('name').'%');
@@ -31,7 +42,6 @@ class TenantController extends Controller
        return $query->where('category_id', $request->query('category_id'));
         })
         ->paginate(20);
-
 
       return view('tenants.index', [
           'tenants' => $tenants,
