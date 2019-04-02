@@ -14,27 +14,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                  <!-- Left Side Of Navbar -->
+<div id="app">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}
+                </a>
+            </div>
+            <!-- Left Side Of Navbar -->
                   <ul class="nav navbar-nav navbar-left">
                     @guest
                     @else
@@ -122,42 +110,40 @@
                     </li>
                     @endguest
                   </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-
-                        @else
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+            <div>
+                <ul class="nav navbar-nav justify-content-end">
+                    @if (Auth::guest())
+                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                    @else
+                        <li>
+                            <div class="dropdown show">
+                                <a href="#" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->name }}
                                 </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                    <a href="{{ route('logout') }}" class="dropdown-item"
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    @endif
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        @yield('content')
-    </div>
+    @yield('content')
+</div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
