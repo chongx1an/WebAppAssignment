@@ -137,7 +137,7 @@ class TenantController extends Controller
           'floor_id' => 'required',
           'category_id' => 'required',
         ]);
-        
+
         $tenant = Tenant::find($id);
         if(!$tenant) throw new ModelNotFoundException;
 

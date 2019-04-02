@@ -56,9 +56,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-          'category' => 'required',
+          'name' => 'required',
         ]);
-        
+
         $category = new Category;
         $category->fill($request->all());
         $category->save();
@@ -111,8 +111,9 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-          'category' => 'required',
+          'name' => 'required',
         ]);
+
         $category = Category::find($id);
         if(!$category) throw new ModelNotFoundException;
 
