@@ -5,6 +5,7 @@
 
 @section('content')
 
+
 <!-- check for error -->
 @if ($errors->any())
   <div class="alert alert-danger">
@@ -53,10 +54,13 @@
             </div>
         {!! Form::close() !!}
      </div>
+
      </div>
      </div>
       </div>
       </div>
 
+
+</div>
 
 @endsection

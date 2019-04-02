@@ -2,21 +2,14 @@
 
 use App\Common;
 ?>
-
 @extends('layouts.appAdmin')
-
 
 @section('content')
 
   <!-- Bootstrap Boilerplate... -->
   @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
   <img src="/storage/tenant/{{$tenant->id}}.jpg"
-
-  width="240" alt= {{ $tenant->name}}>
-  @else
-  <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg"
-  width="240">
-
+  width="240" alt="{{"http://www.totalbattery.com/wp-content/uploads/2017/04/Under_construction-300x300.png"}}">
   @endif
 
   <div class="panel-body">

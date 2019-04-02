@@ -22,8 +22,7 @@
                     {{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}
                 </a>
             </div>
-<<<<<<< HEAD
-=======
+
             <!-- Left Side Of Navbar -->
                   <ul class="nav navbar-nav navbar-left">
                     @guest
@@ -167,11 +166,13 @@
                     @endif
                 </ul>
             </div>
-        </div>
->>>>>>> Done Category DashBoard
-    </nav>
 
-    @yield('content')
+        </div>
+    </div>
+</nav>
+
+
+@yield('content')
 </div>
 
 <!-- Scripts -->
