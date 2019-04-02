@@ -72,6 +72,14 @@ class TenantController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+        'name' => 'required',
+        'lot_number' => 'required',
+        'zone_id' => 'required',
+        'floor_id' => 'required',
+        'category_id' => 'required',
+        ]);
+
         $tenant = new Tenant;
         $tenant->fill($request->all());
         $tenant->save();
@@ -122,6 +130,14 @@ class TenantController extends Controller
       */
     public function update(Request $request, $id)
     {
+        $request->validate([
+          'name' => 'required',
+          'lot_number' => 'required',
+          'zone_id' => 'required',
+          'floor_id' => 'required',
+          'category_id' => 'required',
+        ]);
+
         $tenant = Tenant::find($id);
         if(!$tenant) throw new ModelNotFoundException;
 

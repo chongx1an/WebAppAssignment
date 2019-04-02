@@ -36,8 +36,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
         $category = new Category();
 
         return view('categories.create', [
@@ -54,6 +55,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'name' => 'required',
+        ]);
+
         $category = new Category;
         $category->fill($request->all());
         $category->save();
@@ -105,6 +110,10 @@ class CategoryController extends Controller
       */
     public function update(Request $request, $id)
     {
+        $request->validate([
+          'name' => 'required',
+        ]);
+
         $category = Category::find($id);
         if(!$category) throw new ModelNotFoundException;
 

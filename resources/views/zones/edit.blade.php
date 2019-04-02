@@ -5,22 +5,36 @@
 
 @section('content')
 
-    <!-- Bootstrap Boilerplate... -->
+<!-- check for error -->
+@if ($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
 
-    <div class = "panel-body">
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+    <!-- Bootstrap Boilerplate... -->
+    <div class = "card-body">
         <!-- Edit Zone Form -->
         {!! Form::model($zone, [
             'route'   => ['zone.update', $zone->id],
             'method'  => 'put',
             'class'   => 'form-horizontal'
-        ]) !!}
+            ]) !!}
 
             <!-- Code -->
-            <div class="form-group row">
+            <div class="col-md-10 form-group row text-md-right">
                 {!! Form::label('zone-code', 'Zone Code', [
-                    'class' => 'control-label col-sm-3',
+                    'class' => 'col-md-5 control-label ',
                 ]) !!}
-                <div class="col-sm-9">
+                <div class="col-sm-6">
                     {!! Form::text('code', $zone->code, [
                         'id'        => 'zone-code',
                         'class'     => 'form-control',
@@ -31,15 +45,19 @@
 
             <!-- Submit Button -->
             <div class="form-group row">
-                <div class="col-sm-offset-3 col-sm-6">
+                <div class="col-sm-offset-10 col-sm-6">
                     {!! Form::button('Update', [
                         'type'  => 'submit',
-                        'class' => 'btn btn-primary',
+                        'class' => 'btn btn-primary offset-md-9',
                     ]) !!}
                 </div>
             </div>
         {!! Form::close() !!}
      </div>
+     </div>
+     </div>
+      </div>
+      </div>
 
 
 @endsection
