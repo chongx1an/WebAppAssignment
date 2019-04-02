@@ -5330,6 +5330,11 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
+a.custom-card-link,
+a.custom-card-link:hover {
+  color: inherit;
+}
+
 .card-link + .card-link {
   margin-left: 1.25rem;
 }

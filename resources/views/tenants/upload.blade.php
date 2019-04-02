@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts.appAdmin')
 
  @section('content')
 
@@ -26,6 +27,7 @@
       'class' => 'form-horizontal',
       'enctype' => 'multipart/form-data',
       ]) !!}
+
 
       @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
       <img src="/storage/tenant/{{$tenant->id}}.jpg"

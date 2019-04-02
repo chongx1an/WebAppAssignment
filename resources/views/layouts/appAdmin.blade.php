@@ -10,6 +10,7 @@
 
     <title>{{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}</title>
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -19,6 +20,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ "http://localhost:8000/directory" }}">
+
                     {{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}
                 </a>
             </div>
@@ -109,7 +111,6 @@
                       </li>
                     </ul>
                     </li>
-
                     <!-- Tenant Side -->
                     <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
