@@ -16,6 +16,15 @@ use App\Category;
             'method'  => 'put',
             'class'   => 'form-horizontal'
         ]) !!}
+        
+        {!! link_to_route(
+          'tenant.upload',
+          $title = 'Upload Photo',
+
+          $parameters = [
+          'id' => $tenant->id,
+          ]
+          ) !!}
 
             <!-- Name -->
             <div class="form-group row">

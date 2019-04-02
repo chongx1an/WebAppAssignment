@@ -76,6 +76,7 @@
 
                             <td class = "table-text">
                                 <div>
+                                    
                                     {!! link_to_route(
                                       'tenant.upload',
                                       $title = 'Upload Photo',
