@@ -1,9 +1,9 @@
-@include('tenants._filters')
+
 
 <?php
 
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
@@ -84,7 +84,7 @@
                                       'id' => $tenant->id,
                                       ]
                                       ) !!}
-                                      
+
                                     {!! link_to_route(
                                         'tenant.edit',
                                         $title = 'Edit',

@@ -2,7 +2,7 @@
 
 use App\Common;
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 

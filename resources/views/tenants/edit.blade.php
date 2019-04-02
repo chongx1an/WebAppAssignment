@@ -3,7 +3,7 @@ use App\Zone;
 use App\Floor;
 use App\Category;
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
