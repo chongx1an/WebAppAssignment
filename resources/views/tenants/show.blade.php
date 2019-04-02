@@ -9,7 +9,10 @@ use App\Common;
   <!-- Bootstrap Boilerplate... -->
   @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
   <img src="/storage/tenant/{{$tenant->id}}.jpg"
-  width="240" alt="{{"http://www.totalbattery.com/wp-content/uploads/2017/04/Under_construction-300x300.png"}}">
+  width="240" alt= {{ $tenant->name}}>
+  @else
+  <img src="http://www.totalbattery.com/wp-content/uploads/2017/04/Under_construction-300x300.png"
+  width="240">
   @endif
 
   <div class="panel-body">
