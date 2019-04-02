@@ -75,8 +75,7 @@ class TenantController extends Controller
         $tenant = new Tenant;
         $tenant->fill($request->all());
         $tenant->save();
-
-        return redirect()->route('tenant.index');
+        return redirect()->route('tenant.upload', ['id'=>$tenant->id]);
     }
 
     /**

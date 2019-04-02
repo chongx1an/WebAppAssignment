@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -53,6 +53,7 @@
                       </li>
                     </ul>
                     </li>
+
                     <!-- Floor Side -->
                     <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -75,6 +76,34 @@
                         </a>
 
                         <form id="addfloor-form" action="{{ route('floor.create') }}">
+                          {{ csrf_field() }}
+                        </form>
+                      </li>
+                    </ul>
+                    </li>
+
+                    <!-- Category Side -->
+                    <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ 'Category' }} <span class="caret"></span>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                        <li>
+                        <a class="dropdown-item" href="{{ route('category.index') }}" onclick="event.preventDefault(); document.getElementById('categorylist-form').submit();">
+                          Category List
+                        </a>
+
+                        <form id="categorylist-form" action="{{ route('category.index') }}">
+                          {{ csrf_field() }}
+                        </form>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{{ route('category.create') }}" onclick="event.preventDefault(); document.getElementById('addcategory-form').submit();">
+                          Add Category
+                        </a>
+
+                        <form id="addcategory-form" action="{{ route('category.create') }}">
                           {{ csrf_field() }}
                         </form>
                       </li>

@@ -11,7 +11,7 @@ use App\Common;
   <img src="/storage/tenant/{{$tenant->id}}.jpg"
   width="240" alt= {{ $tenant->name}}>
   @else
-  <img src="http://www.totalbattery.com/wp-content/uploads/2017/04/Under_construction-300x300.png"
+  <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg"
   width="240">
   @endif
 

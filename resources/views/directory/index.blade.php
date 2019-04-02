@@ -20,10 +20,13 @@ use App\Category;
             <div class="card-columns" style="margin: 20px 20px 20px 20px">
                 @foreach ($tenants as $i => $tenant)
                     <div class="card shadow">
-                        @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
-                        <img src="/storage/tenant/{{$tenant->id}}.jpg"
-                        width="240" alt="{{"http://www.totalbattery.com/wp-content/uploads/2017/04/Under_construction-300x300.png"}}">
-                        @endif
+                      @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
+                      <img src="/storage/tenant/{{$tenant->id}}.jpg"
+                      width="240" alt= {{ $tenant->name}}>
+                      @else
+                      <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg"
+                      width="240">
+                      @endif
                         <div class="card-body">
                             <h5 class="card-title"> {{ $tenant->name }} </h5>
                             <h6 class="card-subtitle mb-2 text-muted"> {{ $tenant->floor->code."-".$tenant->zone->code."-".$tenant->lot_number }}</h6>
