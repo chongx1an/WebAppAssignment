@@ -83,14 +83,11 @@ Route::post('/tenant/{id}/save-upload', 'TenantController@saveUpload')
         ->name('tenant.saveUpload');
 
 
-Auth::routes();
 Route::get('/admins', 'AdminController@index')
         ->name('admins.index');
 Route::post('/admins/store', 'AdminController@store')
         ->name('admins.store');
 
-Route::get('/home', 'HomeController@index')
-        ->name('home');
 
 Route::get('/directory', 'DirectoryController@index')
         -> name('directory.index');
@@ -100,5 +97,3 @@ Route::get('/directory/{id}', 'TenantController@show')
         -> name('directory.show');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

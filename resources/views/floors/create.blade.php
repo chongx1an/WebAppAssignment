@@ -5,9 +5,11 @@
 
 @section('content')
 
+<div>
     <!-- Bootstrap Boilerplate... -->
-
-    <div class = "panel-body">
+<div class = "row d-flex justify-content-center" style="margin: 50px 50px 50px 50px">
+  <div class = "col-md-6">
+    <div class="container-fuild">
         <!-- New Floor Form -->
         {!! Form::model($floor, [
             'route' => ['floor.store'],
@@ -39,6 +41,10 @@
             </div>
         {!! Form::close() !!}
      </div>
+  </div>
 
+
+
+</div>
 
 @endsection
