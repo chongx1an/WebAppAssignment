@@ -26,7 +26,6 @@ use App\Category;
                         <p class="card-text"> {{ $tenant->category->name }} </p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
-=======
 <table class="table table-borderless">
     <thead>
       <td>@include('directory._filters')</td>
@@ -49,7 +48,6 @@ use App\Category;
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
->>>>>>> 68cd524bc062677fa2306533d304238facb02def
                     </div>
                 @endforeach
             </div>
