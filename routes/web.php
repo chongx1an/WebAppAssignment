@@ -96,6 +96,8 @@ Route::get('/directory', 'DirectoryController@index')
         -> name('directory.index');
 Route::post('/directory/group', 'DirectoryController@group')
         -> name('directory.group');
+Route::get('/directory/{id}', 'TenantController@show')
+        -> name('directory.show');
 
 Auth::routes();
 
