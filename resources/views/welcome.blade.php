@@ -78,7 +78,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+                Utar Mega Mall
             </div>
 
             <div class="links">

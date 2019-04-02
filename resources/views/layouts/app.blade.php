@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name','UTAR Mega Mall') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ "http://localhost:8000/directory" }}">
                     {{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}
                 </a>
             </div>
@@ -143,7 +143,7 @@
             <div>
                 <ul class="nav navbar-nav justify-content-end">
                     @if (Auth::guest())
-                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+
                     @else
                         <li>
                             <div class="dropdown show">

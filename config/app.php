@@ -13,8 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Mall Directory'),
-
+    'myname' => env('APP_NAME', 'Mall Directory | UTAR Mega Mall'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -26,7 +25,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'myenv' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost:8000/directory'),
 
     /*
     |--------------------------------------------------------------------------

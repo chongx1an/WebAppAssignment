@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ "http://localhost:8000/directory" }}">
                     {{ config('app.name', 'Mall Directory | UTAR Mega Mall') }}
                 </a>
             </div>
