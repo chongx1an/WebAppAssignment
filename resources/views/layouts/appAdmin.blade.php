@@ -128,7 +128,7 @@
                       </li>
                       <li>
                         <a class="dropdown-item" href="{{ route('zone.create') }}" onclick="event.preventDefault(); document.getElementById('addzone-form').submit();">
-                          Add Tenant
+                          Add Zone
                         </a>
 
                         <form id="addzone-form" action="{{ route('zone.create') }}">

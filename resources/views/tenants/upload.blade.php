@@ -8,7 +8,9 @@
   <h4>Tenant Name: <em>{{ $tenant->name }}</em></h4>
   <h4>Tenant Category: <em>{{ $tenant->category_id }}</em></h4>
 
-  <div class="panel-body">
+  <!-- check for error -->
+  @if ($errors->any())
+
     @if ($errors->any())
     <div class="alert alert-danger">
 
@@ -20,6 +22,7 @@
     </div>
     @endif
 
+<div class="panel-body">
     <!-- Upload Form -->
     {!! Form::open([
       'route' => ['tenant.saveUpload', $tenant->id],

@@ -7,8 +7,18 @@ use App\Category;
 
 @section('content')
 
-    <!-- Bootstrap Boilerplate... -->
+<!-- check for error -->
+@if ($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
 
+    <!-- Bootstrap Boilerplate... -->
     <div class = "panel-body">
         <!-- Edit Tenant Form -->
         {!! Form::model($tenant, [
@@ -16,7 +26,7 @@ use App\Category;
             'method'  => 'put',
             'class'   => 'form-horizontal'
         ]) !!}
-        
+
         {!! link_to_route(
           'tenant.upload',
           $title = 'Upload Photo',

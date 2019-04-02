@@ -55,6 +55,9 @@ class ZoneController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'code' => 'required',
+        ]);
         $zone = new Zone;
         $zone->fill($request->all());
         $zone->save();
@@ -106,6 +109,10 @@ class ZoneController extends Controller
       */
     public function update(Request $request, $id)
     {
+        $request->validate([
+          'code' => 'required',
+        ]);
+        
         $zone = Zone::find($id);
         if(!$zone) throw new ModelNotFoundException;
 

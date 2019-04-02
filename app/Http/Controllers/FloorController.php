@@ -54,6 +54,10 @@ class FloorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'floor' => 'required',
+        ]);
+        
         $floor = new Floor;
         $floor->fill($request->all());
         $floor->save();
@@ -105,6 +109,10 @@ class FloorController extends Controller
       */
     public function update(Request $request, $id)
     {
+        $request->validate([
+          'floor' => 'required',
+        ]);
+
         $floor = Floor::find($id);
         if(!$floor) throw new ModelNotFoundException;
 
