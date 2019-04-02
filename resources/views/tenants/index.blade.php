@@ -1,9 +1,9 @@
-@include('tenants._filters')
+<!--@include('tenants._filters')-->
 
 <?php
 
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 

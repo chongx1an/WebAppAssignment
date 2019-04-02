@@ -1,7 +1,7 @@
 <?php
 
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 

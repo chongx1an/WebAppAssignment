@@ -1,10 +1,9 @@
 <?php
 
 ?>
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
-
     <!-- Bootstrap Boilerplate... -->
 
     <div class = "panel-body">
@@ -39,6 +38,5 @@
             </div>
         {!! Form::close() !!}
      </div>
-
 
 @endsection
