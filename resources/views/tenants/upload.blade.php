@@ -18,8 +18,11 @@
     @endif
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="card">
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-md-8">
+      <div class="card">
+      <!-- Bootstrap Boilerplate... -->
+      <div class="card-header">Upload Tenant Photo</div>
       <div class="card-body">
         <!-- Upload Form -->
         {!! Form::open([

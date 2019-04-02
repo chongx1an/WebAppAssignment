@@ -5,7 +5,6 @@
 
 @section('content')
 
-    <!-- Bootstrap Boilerplate... -->
 
     <div class = "panel-body">
         @if (count($categories) > 0)
@@ -69,5 +68,6 @@
                 No records found
             </div>
         @endif
-    </div>
+
+</div>
 @endsection

@@ -19,10 +19,11 @@ use App\Category;
 @endif
 
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-md-center mt-5">
     <div class="col-md-8">
       <div class="card">
       <!-- Bootstrap Boilerplate... -->
+      <div class="card-header">Edit Tenant</div>
       <div class = "card-body">
         <!-- New Tenant Form -->
         {!! Form::model($tenant, [
