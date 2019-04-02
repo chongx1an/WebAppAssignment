@@ -75,8 +75,7 @@ class TenantController extends Controller
         $tenant = new Tenant;
         $tenant->fill($request->all());
         $tenant->save();
-
-        return redirect()->route('tenant.index');
+        return redirect()->route('tenant.upload', ['id'=>$tenant->id]);
     }
 
     /**
@@ -146,5 +145,36 @@ class TenantController extends Controller
         return redirect()->route('tenant.index')
                         ->with('success','Tenant deleted successfully');
 
+    }
+
+    /**
+    * Show the form for uploading a photo.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function upload($id)
+    {
+      $tenant = Tenant::find($id);
+      if(!$tenant) throw new ModelNotFoundException;
+
+      return view('tenants.upload', [
+        'tenant' => $tenant,
+      ]);
+    }
+    /**
+
+    * Store a newly created resource in storage.
+    *
+    * @param \Illuminate\Http\Request $request
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function saveUpload(Request $request, $id)
+    {
+      $file = $request->file('image');
+
+      $path = $file->storeAs('public/tenant', $id.'.jpg');
+
+      return redirect()->route('tenant.index');
     }
 }
