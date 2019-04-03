@@ -16,11 +16,14 @@ class CreateTenantsTable extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name', 100)->index();
+            $table->string('shop_name', 100)->index();
             $table->string('lot_number', 10)->index();
             $table->unsignedInteger('zone_id');
             $table->unsignedInteger('floor_id');
             $table->unsignedInteger('category_id');
+            $table->string('owner_name', 100);
+            $table->string('email', 100);
+            $table->string('phone', 15);
             $table->timestamps();
 
         });

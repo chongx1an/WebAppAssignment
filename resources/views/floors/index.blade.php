@@ -65,9 +65,24 @@
                 </tbody>
             </table>
         @else
-            <div>
-                No records found
+          <div>
+            <div class="container">
+              <div class="row justify-content-md-center mt-5">
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="text-center">
+                        There is no record found for floor.
+                      </div>
+                      <div class="text-center" style="margin: 20px">
+                        <a href="{{ url('floor/create') }}" class="btn btn-dark" role="button">Create A Floor</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         @endif
     </div>
 @endsection

@@ -91,7 +91,7 @@ Route::post('/admins/store', 'AdminController@store')
 
 Route::get('/directory', 'DirectoryController@index')
         -> name('directory.index');
-Route::get('/directory/{id}', 'TenantController@show')
+Route::get('/directory/{id}', 'DirectoryController@show')
         -> name('directory.show');
 
 Auth::routes();

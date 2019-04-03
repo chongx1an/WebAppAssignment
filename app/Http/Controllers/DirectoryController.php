@@ -34,4 +34,20 @@ class DirectoryController extends Controller
 
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $tenant = Tenant::find($id);
+        if(!$tenant) throw new ModelNotFoundException;
+
+        return view('directory.show', [
+          'tenant' => $tenant
+        ]);
+    }
 }

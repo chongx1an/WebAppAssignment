@@ -33,12 +33,12 @@ use App\Category;
 
             <!-- Name -->
             <div class="col-md-10 form-group row text-md-right">
-                {!! Form::label('tenant-name', 'Tenant Name', [
+                {!! Form::label('tenant-shop_name', 'Shop Name', [
                     'class' => 'control-label col-sm-4',
                 ]) !!}
                 <div class="col-sm-8">
-                    {!! Form::text('name', null, [
-                        'id'        => 'tenant-name',
+                    {!! Form::text('shop_name', null, [
+                        'id'        => 'tenant-shop_name',
                         'class'     => 'form-control',
                         'maxlength' => 100,
                     ]) !!}
@@ -100,6 +100,50 @@ use App\Category;
                 ]) !!}
             </div>
             </div>
+
+
+            <!-- Owner Name -->
+            <div class="col-md-10 form-group row text-md-right">
+                {!! Form::label('tenant-owner_name', 'Owner Name', [
+                    'class' => 'control-label col-sm-4',
+                ]) !!}
+                <div class="col-sm-8">
+                    {!! Form::text('owner_name', null, [
+                        'id'        => 'tenant-owner_name',
+                        'class'     => 'form-control',
+                        'maxlength' => 100,
+                    ]) !!}
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-10 form-group row text-md-right">
+                {!! Form::label('tenant-email', 'Email', [
+                    'class' => 'control-label col-sm-4',
+                ]) !!}
+                <div class="col-sm-8">
+                    {!! Form::text('email', null, [
+                        'id'        => 'tenant-email',
+                        'class'     => 'form-control',
+                        'maxlength' => 100,
+                    ]) !!}
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-10 form-group row text-md-right">
+                {!! Form::label('tenant-phone', 'Contact Number', [
+                    'class' => 'control-label col-sm-4',
+                ]) !!}
+                <div class="col-sm-8">
+                    {!! Form::text('phone', null, [
+                        'id'        => 'tenant-phone',
+                        'class'     => 'form-control',
+                        'maxlength' => 15,
+                    ]) !!}
+                </div>
+            </div>
+
 
             <!-- Submit Button -->
             <div class="form-group row">

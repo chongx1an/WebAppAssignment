@@ -12,11 +12,14 @@ class Tenant extends Model
      * @var array
      */
     protected $fillable = [
-      'name',
+      'shop_name',
       'lot_number',
       'zone_id',
       'floor_id',
-      'category_id'
+      'category_id',
+      'owner_name',
+      'email',
+      'phone'
     ];
 
     /**

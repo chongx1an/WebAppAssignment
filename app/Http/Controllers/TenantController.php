@@ -26,12 +26,6 @@ class TenantController extends Controller
     {
 
         $tenants = Tenant::with('zone:id,code')
-       ->when($request->query('name'), function($query) use ($request) {
-       return $query->where('name', 'like', '%'.$request->query('name').'%');
-       })
-       ->when($request->query('lot_number'), function($query) use ($request) {
-       return $query->where('lot_number', $request->query('lot_number'));
-       })
        ->when($request->query('zone_id'), function($query) use ($request) {
        return $query->where('zone_id', $request->query('zone_id'));
        })
@@ -73,11 +67,14 @@ class TenantController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        'name' => 'required',
+        'shop_name' => 'required',
         'lot_number' => 'required',
         'zone_id' => 'required',
         'floor_id' => 'required',
         'category_id' => 'required',
+        'owner_name' => 'required',
+        'email' => 'required',
+        'phone' => 'required',
         ]);
 
         $tenant = new Tenant;
@@ -131,11 +128,14 @@ class TenantController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-          'name' => 'required',
+          'shop_name' => 'required',
           'lot_number' => 'required',
           'zone_id' => 'required',
           'floor_id' => 'required',
           'category_id' => 'required',
+          'owner_name' => 'required',
+          'email' => 'required',
+          'phone' => 'required',
         ]);
 
         $tenant = Tenant::find($id);

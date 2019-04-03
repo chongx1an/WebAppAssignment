@@ -31,14 +31,14 @@
           'enctype' => 'multipart/form-data',
 
           ]) !!}
-
-          @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
-          <img src="/storage/tenant/{{$tenant->id}}.jpg"
-          width="240" alt= "{{ $tenant->name }}">
-          @else
-          <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg" width="240">
-          @endif
-
+          <div class="text-center" style="margin: 20px 20px 20px 20px">
+            @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
+              <img src="/storage/tenant/{{$tenant->id}}.jpg"
+              width="240" alt= "{{ $tenant->name }}">
+            @else
+              <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg" width="240">
+            @endif
+          </div>
           <!-- Code -->
           <div class="col-md-12 form-group row text-md-right">
             {!! Form::label('tenant-photo', 'Select File', [
