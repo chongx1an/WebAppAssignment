@@ -21,7 +21,13 @@ use App\Category;
 
                     <a href= "directory/{{ $tenant->id }}" class="custom-card-link">
                         <div class="card shadow">
-                            <img class="card-img-top" src="https://www.aucklandairport.co.nz/-/media/Images/Traveller/Retail/Stores/Store-Main-Images/Adidas.ashx?mw=1300&hash=A76FE9990B9D3A83358256755B0823BDA9727D55" alt="Card image cap">
+                            @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
+                            <img class="card-img-top" src="/storage/tenant/{{$tenant->id}}.jpg"
+                              alt= "{{ $tenant->name }}">
+                            @else
+                            <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg" width="240">
+                            @endif
+                            
                             <div class="card-body">
                                 <h5 class="card-title"> {{ $tenant->name }} </h5>
                                 <h6 class="card-subtitle mb-2 text-muted"> {{ $tenant->floor->code."-".$tenant->zone->code."-".$tenant->lot_number }}</h6>

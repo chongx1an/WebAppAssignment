@@ -34,7 +34,7 @@
 
           @if(Storage::disk('public')->exists('tenant/'.$tenant->id.'.jpg'))
           <img src="/storage/tenant/{{$tenant->id}}.jpg"
-          width="240" alt= {{ $tenant->name}}>
+          width="240" alt= "{{ $tenant->name }}">
           @else
           <img src="https://poewellnesssolutions.com/wp-content/plugins/lightbox/images/No-image-found.jpg" width="240">
           @endif
